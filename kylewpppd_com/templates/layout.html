@@ -1,36 +1,40 @@
 <!doctype html>
 <html>
-	{% block head %}
-	<head>
-		<meta charset=utf-8>
-		<title>{% block title %}Welcome{% endblock %} | KyleWpppd.com</title>
-		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-		{% block head_styles %}
-		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles/base.css') }}">
-		{% endblock %}
-		{% block head_scripts %}
-		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		{% endblock %}
-	</head>
-	{% endblock %}
-	{% block body %}
-	<body>
-		<header><h1>Kyle Wanamaker's site</h1></header>
-		<nav class="header-nav">
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="{{ url_for('main.bio') }}">About Me</a></li>
-				<li><a href="{{ url_for('blog.index') }}">Thoughts</a></li>
-				<li>Projects</li>
-				<li>Black Techies</li>
-				<li>Photography</li>
-				<li>Contact</li>
-			</ul>
-		</nav>
-		<div>
-			{% block main_content %}
-			{% endblock %}
-		</div>
-	</body>
-	{% endblock %}
+  {% block head %}
+  <head>
+    <meta charset=utf-8>
+    <title>{% block title %}Welcome{% endblock %} | KyleWpppd.com</title>
+    <link rel="shortcut icon"
+          href="{{ url_for('static', filename='favicon.ico') }}">
+    {% block head_styles %}
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='styles/base.css') }}">
+    {% endblock %}
+    {% block head_scripts %}
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    {% endblock %}
+  </head>
+  {% endblock %}
+  {% block body %}
+  <body>
+    <header class="site-header">
+      <h1>Kyle Wanamaker's Site</h1>
+    </header>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="{{ url_for('main.bio') }}">About Me</a></li>
+        <li><a href="{{ url_for('blog.index') }}">Thoughts</a></li>
+        <li><a href="{{ url_for('projects.index') }}">Projects</a></li>
+        <li>Black Techies</li>
+        <li>Photography</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+    <div>
+      {% block main_content %}
+      {% endblock %}
+    </div>
+  </body>
+  {% endblock %}
 </html>

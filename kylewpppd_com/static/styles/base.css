@@ -1,8 +1,27 @@
+.site-header h1 {
+    font-size: 1.2rem;
+}
+
 .header-nav ul {
     list-style-type: none;
+    margin: 0;
+    padding-left: 2.0rem;
 }
 
 .header-nav li {
     display: inline;
     margin: 0 0.2rem;
+    /* We want a little bit of spacing if we wrap to 2 lines... */
+    line-height: 1.2rem;
+    /* But we don't want line breaks in the middle of an item */
+    white-space: nowrap;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin: 0.8rem 0 0.1rem;
 }

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block head_styles %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/projects.css') }}">
+{% endblock %}
+
+{% block main_content %}
+{{ wat(self) }}
+{{ __file__ }}
+<div class="projects">
+  <h1>Things I've Made</h1>
+  <p>From time to time, I enjoy making things. It's quite rewarding and
+    I hope to do more of it. Below is some of the stuff I can share.</p>
+  <div class="project">
+    <h2>Project Euler</h2>
+    <p class="project-lastupdated">Last Updated: 2011-03-01</p>
+    <p class="project-leader">Project Euler is a site where people solve math
+      problems with code.</p>
+
+    <p>I often use Project Euler when I am trying to learn a new
+    language. The problems are simple and straightforward enough to
+    learn the basics, yet they get complex enough to learn language
+    idioms.</p>
+  </div>
+  <div>
+    <h2></h2>
+  </div>
+</div>
+{% endblock %}

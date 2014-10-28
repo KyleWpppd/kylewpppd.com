@@ -1,0 +1,8 @@
+.projects .project-leader {
+    font-weight: bold;
+}
+
+.projects .project-lastupdated {
+    font-style: italic;
+    margin: 0.2rem 0 inherit;
+}
