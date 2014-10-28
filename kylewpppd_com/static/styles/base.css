@@ -1,0 +1,8 @@
+.header-nav ul {
+    list-style-type: none;
+}
+
+.header-nav li {
+    display: inline;
+    margin: 0 0.2rem;
+}
