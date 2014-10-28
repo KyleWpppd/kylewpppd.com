@@ -1,0 +1,12 @@
+# Mac OS X stuff
+.DS_Store
+
+# Emacs temp files
+.\#*
+
+# Compiled Python Artifacts
+*.pyc
+*.pyo
+
+# VirtualEnv folder
+/.virtualenv
