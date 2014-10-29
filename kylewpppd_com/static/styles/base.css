@@ -25,3 +25,7 @@ h2 {
     font-size: 1.25rem;
     margin: 0.8rem 0 0.1rem;
 }
+
+.modification-info .modification-date {
+    font-style: italic;
+}

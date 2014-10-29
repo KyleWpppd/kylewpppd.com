@@ -1,8 +1,9 @@
-from pprint import pprint
+from os.path import getmtime
 
 from flask import Flask, session, g, render_template
-from flask.globals import _request_ctx_stack, _app_ctx_stack
+from flask.globals import _app_ctx_stack
 
+from babel.dates import format_datetime, get_timezone
 
 app = Flask(__name__)
 app.config.from_object('kylewpppd_com_config')
@@ -11,20 +12,14 @@ app.config.from_object('kylewpppd_com_config')
 def not_found(error):
     return render_template('404.html'), 404
 
-@app.context_processor
-def wat(thing):
-    return vars(thing)
-
 def render_template_with_mtime(template_name_or_list, **context):
     ctx = _app_ctx_stack.top
     template = ctx.app.jinja_env.get_or_select_template(template_name_or_list)
-    from StringIO import StringIO
-    from os.path import getmtime
-    buf = StringIO()
-    pprint(vars(template), buf)
-    return str(getmtime(template.filename))
-
-app.jinja_env.globals.update(wat=wat)
+    mtime = getmtime(template.filename)
+    us_eastern = get_timezone('US/Eastern')
+    long_date = format_datetime(mtime, tzinfo=us_eastern)
+    context.update({'template_mtime': mtime, 'template_mdate': long_date, 'template_name_or_list': template})
+    return render_template(**context)
 
 from kylewpppd_com.views import main
 from kylewpppd_com.views import blog

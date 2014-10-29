@@ -2,7 +2,10 @@
     font-weight: bold;
 }
 
+.projects .project-details p {
+    margin: 0.2rem 0;
+}
+
 .projects .project-lastupdated {
     font-style: italic;
-    margin: 0.2rem 0 inherit;
 }
