@@ -8,7 +8,13 @@ Running
 
 **You'll need Python, PIP, and VirtualEnv to successfully run the site**
 
-1. Clone the repo to a folder on your machine
+1. Clone the repo to a folder on your machine:
+
+    `$ git clonse git@github.com:KyleWpppd/kylewpppd.com.git`
+
+   **Or**, if for some reason, the ssh url gives you trouble, try the HTTP link:
+
+    `$ git clone https://github.com/KyleWpppd/kylewpppd.com.git`
 
 2. Create a new virtual environment
 
