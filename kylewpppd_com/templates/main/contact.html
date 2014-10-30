@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block main_content %}
+<h1>Contact</h1>
+<p>Please send me an email if you need to contact me.</p>
+<p>I am particularly interested in meeting Nigerian princes and
+   people who can help me improve my love life with pharmaceuticals.</p>
+<p><a href="" class="contact-email"></a></p>
+<script>
+  (function() {
+    var a = document.querySelector('.contact-email');
+    if (a) {
+      var address =  ['kyl' + 'e', 'wan' + '\u0061\u006da' +
+        'ker' + '\u0040gma' + 'il', decodeURIComponent('%63%6f%6d')].join('\u002e');
+      a.href = ['mai'+ 'lto\u003a', address, '?subject=',
+        encodeURIComponent('[Website contact]')].join('');
+      a.innerHTML = address;
+    }
+  }());
+</script>
+{% endblock %}
+

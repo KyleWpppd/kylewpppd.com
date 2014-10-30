@@ -12,3 +12,11 @@ def index():
 def bio():
     return render_template_with_mtime('main/bio.html')
 
+@mod.route('/black-techies')
+def techies():
+    return render_template_with_mtime('main/techies.html')
+
+@mod.route('/contact')
+def contact():
+    return render_template_with_mtime('main/contact.html')
+

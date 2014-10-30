@@ -27,5 +27,6 @@ h2 {
 }
 
 .modification-info .modification-date {
+    font-size: 0.75rem;
     font-style: italic;
 }

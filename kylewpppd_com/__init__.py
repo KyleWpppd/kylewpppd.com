@@ -1,3 +1,4 @@
+from os import getenv
 from os.path import getmtime
 
 from flask import Flask, session, g, render_template
@@ -6,7 +7,9 @@ from flask.globals import _app_ctx_stack
 from babel.dates import format_datetime, get_timezone
 
 app = Flask(__name__)
-app.config.from_object('kylewpppd_com_config')
+
+if getenv('KYLEWPPPD_COM_ENVIRONMENT', False) == 'Development':
+    app.debug = True
 
 @app.errorhandler(404)
 def not_found(error):
@@ -24,10 +27,12 @@ def render_template_with_mtime(template_name_or_list, **context):
 from kylewpppd_com.views import main
 from kylewpppd_com.views import blog
 from kylewpppd_com.views import projects
+from kylewpppd_com.views import photography
 
 
 app.register_blueprint(main.mod)
 app.register_blueprint(blog.mod)
 app.register_blueprint(projects.mod)
+app.register_blueprint(photography.mod)
 
 
