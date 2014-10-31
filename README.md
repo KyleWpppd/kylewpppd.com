@@ -10,7 +10,7 @@ Running
 
 1. Clone the repo to a folder on your machine:
 
-    `$ git clonse git@github.com:KyleWpppd/kylewpppd.com.git`
+    `$ git clone git@github.com:KyleWpppd/kylewpppd.com.git`
 
    **Or**, if for some reason, the ssh url gives you trouble, try the HTTP link:
 
